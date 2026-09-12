@@ -1,0 +1,712 @@
+/* Styling ya Jumla */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-color: #0b1f3a;
+    --accent-color: #f39c12;
+    --secondary-color: #162a45;
+    --text-color: #333333;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-image {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    border-radius: 50%;
+    flex: 0 0 auto;
+}
+
+.logo-text h1 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+}
+
+.logo-text p {
+    color: #fff;
+    font-size: 0.75rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    padding: 100px 5% 80px;
+    text-align: center;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-slides,
+.hero-overlay,
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 1.4s ease-in-out, transform 5s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(11, 31, 58, 0.78), rgba(11, 31, 58, 0.78));
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 850px;
+    margin: 0 auto 25px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #d48806;
+    color: #fff;
+}
+
+/* Container Sections */
+.section {
+    padding: 60px 5%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 8px auto 0;
+}
+
+/* Grid Layouts */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.grid-center {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.grid-center .card {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Card Styling */
+.card {
+    background: var(--light-bg);
+    padding: 0;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    padding: 0 25px;
+    padding-top: 20px;
+}
+
+.card p {
+    padding: 0 25px 20px 25px;
+}
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+    display: block;
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.25);
+}
+
+.service-card {
+    padding: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-image {
+    width: 100%;
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 4px solid var(--accent-color);
+    display: block;
+}
+
+.service-card h3,
+.service-card p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.service-card h3 {
+    padding-top: 18px;
+}
+
+.service-card p {
+    padding-bottom: 20px;
+}
+
+/* Contact page visual panel and glass form */
+.contact-layout {
+    align-items: stretch;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.contact-section {
+    background-image: linear-gradient(rgba(11, 31, 58, 0.65), rgba(11, 31, 58, 0.65)), url('jumla.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-info-panel {
+    min-height: 430px;
+    padding: 40px;
+    border-radius: 8px;
+    color: var(--white);
+    background: rgba(11, 31, 58, 0.45);
+    box-shadow: none;
+}
+
+.contact-info-panel h2 {
+    color: var(--accent-color);
+}
+
+.glass-form {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 5px solid var(--accent-color);
+    background: rgba(11, 31, 58, 0.18);
+    box-shadow: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-form input,
+.glass-form textarea {
+    color: var(--white);
+    background: rgba(11, 31, 58, 0.2);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.glass-form h3 {
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.glass-form input::placeholder,
+.glass-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 5% 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-info h3, .footer-links h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #2a3f5a;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* Social Media Links in Footer */
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+    padding: 8px 12px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.values-bar {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 4%;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-container {
+        text-align: center;
+    }
+
+    .logo-text h1 {
+        font-size: clamp(1.15rem, 5vw, 1.5rem);
+    }
+
+    .logo-image {
+        width: 46px;
+        height: 46px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .hero {
+        padding: 70px 6% 55px;
+    }
+
+    .hero h2 {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+    .section-title {
+        margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .contact-info-panel {
+        min-height: 360px;
+        padding: 28px;
+        box-shadow: none;
+    }
+
+    .contact-layout {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 35px 6% 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .values-bar {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+}
+
+@media (max-width: 420px) {
+    .nav-links {
+        gap: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 18px;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   Sehemu ya Muundo wa Uongozi (Management Chart)
+   Hizi ni kodi maalum kwa About Us page pekee.
+   ========================================= */
+
+.management-section {
+    background-color: var(--white);
+    padding: 60px 5%;
+    overflow-x: auto; /* Inaruhusu kusogeza pembeni kwenye simu ndogo sana */
+}
+
+/* Kifurushi kikuu cha chati */
+.management-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    min-width: 650px; /* Inahakikisha mistari haijikunji vibaya */
+    margin: 0 auto;
+}
+
+/* Mistari ya kuunganisha (Vertical) */
+.management-chart::before {
+    content: '';
+    position: absolute;
+    top: 70px; /* Inaanza chini ya CEO */
+    bottom: 250px; /* Inaishia kabla ya level ya mwisho */
+    width: 2px;
+    background-color: var(--primary-color);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Kadi ya kiongozi mmoja */
+.leader-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 1;
+    transition: 0.3s;
+}
+
+.leader-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Picha ya Kiongozi */
+.leader-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+    box-shadow: 0 6px 16px rgba(11, 31, 58, 0.3);
+}
+
+.leader-card:hover .leader-photo {
+    border-color: var(--accent-color);
+}
+
+/* Jina na Cheo */
+.leader-name {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leader-title {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* Maelezo ya Cheo kwa kirefu (Kama 'Chief Executive Officer') */
+.leader-desc {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.3;
+}
+
+/* --- Level Structure --- */
+
+/* Level 1: CEO (Juu kabisa) */
+.level-1 {
+    margin-bottom: 40px;
+}
+
+/* Level 2: COO */
+.level-2 {
+    margin-bottom: 40px;
+}
+
+/* Level 3: Idara za Kati (HEAD PMU, HEAD OPS, HEAD MAR&PR) */
+.level-3-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* Mstari wa mlalo unaounganisha idara za kati */
+.level-3-row::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 200px); /* Kuanzia kadi ya kwanza */
+    right: calc(50% - 200px); /* Hadi kadi ya mwisho */
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+/* Level 4: Business Development (Chini kabisa) */
+.level-4 {
+    margin-top: 20px;
+}
+
+/* Marekebisho ya Responsive kwa chati */
+@media (max-width: 768px) {
+    .management-section {
+        padding: 40px 15px;
+    }
+    
+    .leader-card {
+        width: 180px;
+        padding: 15px;
+    }
+    
+    .leader-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .level-3-row {
+        gap: 15px;
+    }
+    
+    /* Rekebisha urefu wa mistari kwenye mobile */
+    .management-chart::before {
+        top: 60px;
+        bottom: 230px;
+    }
+}
