@@ -1,0 +1,15 @@
+{
+  "name": "lion-hub-solution",
+  "version": "1.0.0",
+  "description": "Lion Hub Solution Company Ltd - Professional Multi-Service Corporate Vendor",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "keywords": ["vercel", "analytics", "lion-hub-solution"],
+  "author": "Lion Hub Solution Company Ltd",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
